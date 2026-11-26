@@ -1,0 +1,174 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#082D63">
+  <title>Criar conta | Central do Empreendedor</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+    }
+
+    .cadastro {
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .cabecalho {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .subtitulo {
+      color: var(--muted);
+      margin-top: 8px;
+    }
+
+    .formulario {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .campo label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .formulario button {
+      width: 100%;
+      margin-top: 8px;
+    }
+
+    .rodape {
+      text-align: center;
+      margin-top: 22px;
+      font-size: 14px;
+    }
+
+    .rodape a {
+      color: var(--blue);
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="cadastro">
+
+    <header class="cabecalho">
+      <div class="logo">▦ CENTRAL DO EMPREENDEDOR</div>
+      <p class="subtitulo">
+        Crie sua conta e organize seu negócio.
+      </p>
+    </header>
+
+    <section class="card">
+
+      <h2>Criar minha conta</h2>
+      <p class="subtitulo">
+        Preencha seus dados para começar.
+      </p>
+
+      <form class="formulario" id="formCadastro">
+
+        <div class="campo">
+          <label for="nome">Nome completo</label>
+          <input
+            type="text"
+            id="nome"
+            placeholder="Seu nome completo"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="seu@email.com"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="senha">Senha</label>
+          <input
+            type="password"
+            id="senha"
+            placeholder="Crie uma senha"
+            minlength="8"
+            required
+          >
+        </div>
+
+        <div class="campo">
+          <label for="confirmarSenha">Confirmar senha</label>
+          <input
+            type="password"
+            id="confirmarSenha"
+            placeholder="Digite a senha novamente"
+            minlength="8"
+            required
+          >
+        </div>
+
+        <button type="submit" class="btn">
+          Continuar
+        </button>
+
+        <p id="mensagem" role="status"></p>
+
+      </form>
+
+      <div class="rodape">
+        Já tem uma conta?
+        <a href="login.html">Entrar</a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    document.getElementById("formCadastro")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const senha = document.getElementById("senha").value;
+        const confirmar = document.getElementById("confirmarSenha").value;
+        const mensagem = document.getElementById("mensagem");
+
+        if (senha !== confirmar) {
+          mensagem.textContent = "As senhas não são iguais.";
+          mensagem.style.color = "red";
+          return;
+        }
+
+        mensagem.textContent =
+          "Cadastro visual validado! A integração da conta será feita com o Supabase.";
+
+        mensagem.style.color = "#0754B8";
+      });
+  </script>
+
+</body>
+</html>
