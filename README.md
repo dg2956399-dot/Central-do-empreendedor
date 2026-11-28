@@ -1,2 +1,2 @@
-# Central-do-empreendedor
-Plataforma SaaS para pequenos empreendedores gerenciarem produtos, pedidos, clientes e vendas.
+# LP-MODAS
+luja virtual,vendas de roupas ,masculina ,feminina, infantil
