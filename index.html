@@ -1,1 +1,288 @@
 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LP MODAS | Vista seu estilo!</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+  color: #222;
+}
+header {
+  background: #071b43;
+  color: white;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.logo {
+  font-size: 27px;
+  font-weight: bold;
+}
+.logo span {
+  color: #ffcf32;
+}
+.slogan {
+  font-size: 12px;
+  color: #ddd;
+  margin-top: 4px;
+}
+.search {
+  flex: 1;
+  max-width: 450px;
+  display: flex;
+}
+.search input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px 0 0 6px;
+}
+.search button {
+  padding: 12px 17px;
+  border: none;
+  background: #ffcf32;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+}
+.header-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.header-actions a {
+  color: white;
+  text-decoration: none;
+}
+nav {
+  background: white;
+  padding: 14px 5%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  box-shadow: 0 2px 5px #ddd;
+}
+nav a {
+  color: #071b43;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+.banner {
+  margin: 20px auto;
+  width: 92%;
+  min-height: 260px;
+  border-radius: 12px;
+  background: linear-gradient(120deg,#071b43,#1555a0);
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 35px;
+  overflow: hidden;
+}
+.banner-content {
+  max-width: 500px;
+}
+.banner h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+.banner p {
+  font-size: 17px;
+  margin-bottom: 20px;
+}
+.banner button {
+  padding: 13px 25px;
+  background: #ffcf32;
+  color: #071b43;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.section {
+  width: 92%;
+  margin: 30px auto;
+}
+.section h2 {
+  color: #071b43;
+  margin-bottom: 20px;
+}
+.categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+  gap: 15px;
+}
+.category {
+  background: white;
+  padding: 22px 10px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ddd;
+}
+.category a {
+  color: #071b43;
+  text-decoration: none;
+}
+.promo {
+  background: #ffcf32;
+  color: #071b43;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 0;
+}
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+  gap: 18px;
+}
+.product {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px #ddd;
+  position: relative;
+}
+.product img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+.product-info {
+  padding: 12px;
+}
+.product-info h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+.price {
+  color: #087b42;
+  font-size: 19px;
+  font-weight: bold;
+}
+.old-price {
+  color: #888;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+.product button {
+  width: 100%;
+  padding: 11px;
+  background: #071b43;
+  color: white;
+  border: none;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.favorite {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: white;
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  font-size: 19px;
+}
+footer {
+  background: #071b43;
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  margin-top: 40px;
+}
+@media(max-width:600px) {
+  header {
+    justify-content: center;
+  }
+  .search {
+    order: 3;
+    flex-basis: 100%;
+  }
+  .banner {
+    min-height: 220px;
+    padding: 25px;
+  }
+  .banner h1 {
+    font-size: 29px;
+  }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">👗 <span>LP</span> MODAS</div>
+    <div class="slogan">Vista seu estilo!</div>
+  </div>
+
+  <div class="search">
+    <input type="search" placeholder="O que você está procurando?">
+    <button>🔍</button>
+  </div>
+
+  <div class="header-actions">
+    <a href="#">👤 Minha conta</a>
+    <a href="#produtos">🛒 Carrinho <span id="cartCount">0</span></a>
+  </div>
+</header>
+
+<nav>
+  <a href="#">Início</a>
+  <a href="#categorias">Feminino</a>
+  <a href="#categorias">Masculino</a>
+  <a href="#categorias">Infantil</a>
+  <a href="#produtos">Ofertas</a>
+  <a href="#produtos">Mais vendidos</a>
+</nav>
+
+<section class="banner">
+  <div class="banner-content">
+    <h1>Vista seu estilo!</h1>
+    <p>Encontre as melhores tendências da moda em um só lugar.</p>
+    <button onclick="document.getElementById('produtos').scrollIntoView({behavior:'smooth'})">
+      COMPRAR AGORA
+    </button>
+  </div>
+</section>
+
+<section class="section" id="categorias">
+  <h2>Explore nossas categorias</h2>
+  <div class="categories">
+    <div class="category">👗<br>Feminino</div>
+    <div class="category">👔<br>Masculino</div>
+    <div class="category">👕<br>Camisetas</div>
+    <div class="category">👖<br>Calças</div>
+    <div class="category">👟<br>Calçados</div>
+    <div class="category">👜<br>Acessórios</div>
+  </div>
+</section>
+
+<div class="promo">
+  🔥 OFERTAS ESPECIAIS — APROVEITE NOSSAS PROMOÇÕES!
+</div>
+
+<section class="section" id="produtos">
+  <h2>⭐ Mais Vendidos</h2>
+  <div class="products" id="productList">
+  </div>
+</section>
+</body>
+</html>
